@@ -1,0 +1,32 @@
+<div class="tabs">
+  <ul>
+    <li [class.activo]="currentCity === 'london'" (click)="cambiarCiudad('london')">London</li>
+    <li [class.activo]="currentCity === 'paris'" (click)="cambiarCiudad('paris')">Paris</li>
+    <li [class.activo]="currentCity === 'tokyo'" (click)="cambiarCiudad('tokyo')">Tokyo</li>
+  </ul>
+  @if(currentCity === 'london'){
+  <section>
+    <h2>London</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius animi sapiente similique magnam quae? Fugiat
+      incidunt similique suscipit, aut, quia est in soluta magnam voluptatem accusamus repellat ratione accusantium
+      dolorum.</p>
+  </section>
+  }@else if( currentCity === 'paris' ){
+  <section>
+    <h2>Paris</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus cum fugiat facilis natus maiores assumenda
+      architecto voluptas aut ducimus! Porro.</p>
+  </section>
+  }@else if(currentCity === 'tokyo'){
+  <section>
+    <h2>Tokyo</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint rem incidunt recusandae cum, similique
+      reprehenderit aperiam placeat fuga omnis. Nesciunt laborum accusantium, exercitationem fugiat ullam quis eius
+      labore sint mollitia nisi eaque molestias dolorem, sequi consequatur perferendis doloremque in dignissimos et.
+      Exercitationem autem earum id laborum ad quo vel ipsa repellendus debitis minus veritatis quas aperiam aut minima,
+      dolor, soluta corrupti eius. Iste delectus expedita magnam dicta asperiores enim placeat ducimus, esse itaque.
+      Quae unde deserunt aperiam ut. Illo, distinctio, recusandae cumque fugit ullam ipsum saepe tenetur quos quasi aut
+      cum enim eaque ipsam sapiente temporibus officiis repellendus qui harum?</p>
+  </section>
+  }
+</div>

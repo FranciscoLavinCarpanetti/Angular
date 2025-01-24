@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.tabs {
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid black;
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+
+    .activo {
+      background-color: tomato;
+      color: black;
+    }
+
+    li {
+      background-color: black;
+      color: white;
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+      border: 2px solid white;
+      cursor: pointer;
+
+      &:hover {
+        background-color: grey;
+        color: black;
+      }
+    }
+  }
+
+  section {
+    padding: 20px;
+  }
+
+
+}

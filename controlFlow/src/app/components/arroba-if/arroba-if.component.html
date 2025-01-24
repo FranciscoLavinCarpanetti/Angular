@@ -1,0 +1,15 @@
+<button (click)="mostrar()">{{texto}}</button>
+@if(visible){
+<h1>Parrafo 1</h1>
+}
+
+<hr>
+<p>{{edad}}</p>
+<input type="number" placeholder="introduce tu edad" (input)="updateAge($event)">
+@if(edad >= 0 && edad<10){ <p>Eres un niño</p>
+  }@else if(edad>=10 && edad <21){ <p>Eres un adolescente</p>
+    }@else if(edad>=21 && edad <= 65){ <p>Eres un adulto</p>
+      }@else if(edad > 65 && edad <= 100){ <p>Eres un anciano</p>
+        }@else{
+        <p>Edad no valida</p>
+        }

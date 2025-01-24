@@ -1,0 +1,24 @@
+<section id="contacto">
+  @for(contact of arrContactos; track contact.id; let i=$index; let primero=$first; let ultimo=$last; let par = $even;
+  let impar=$odd ){
+  <article [class.impar]="impar" [class.par]="par">
+    <h3>{{contact.name}}</h3>
+    <p>Posicion: {{i}}</p>
+    <p>Primero: {{primero}}</p>
+    <p>Ultimo: {{ultimo}}</p>
+    <p>Par: {{par}}</p>
+    <p>Impar: {{impar}}</p>
+    <p>Telefono: {{contact.phone}}</p>
+  </article>
+  }@empty{
+  <h2>NO HAY CONTACTOS</h2>
+  }
+</section>
+
+<section>
+  <ul>
+    @for(numero of arrNumeros; track numero; let i=$index){
+    <li>{{i}} - {{numero}}</li>
+    }
+  </ul>
+</section>

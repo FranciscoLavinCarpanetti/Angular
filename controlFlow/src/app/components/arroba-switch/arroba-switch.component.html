@@ -1,0 +1,41 @@
+<div class="switch">
+  <div>
+    <p>
+      <input type="radio" name="role" (change)="getRole('admin')"><span>Admin</span>
+    </p>
+    <p>
+      <input type="radio" name="role" (change)="getRole('editor')"><span>Editor</span>
+    </p>
+    <p>
+      <input type="radio" name="role" (change)="getRole('suscriptor')"><span>Suscriptor</span>
+    </p>
+
+  </div>
+
+  @switch (roleActual) {
+  @case('admin'){
+  <section class="admin">
+    <h1>Bienvenido admin, tienes todos los permisos</h1>
+    <button>Añadir</button><button>Borrar</button><button>Editar</button>
+  </section>
+  }
+
+  @case('editor'){
+  <section class="editor">
+    <h1>Bienvenido editor, solo puede crear contenido</h1>
+    <button>Añadir</button>
+  </section>
+  }
+
+  @case('suscriptor'){
+  <section class="suscriptor">
+    <h1>Bienvenido suscriptor,solo puedes ver tu perfil, no puedes tocar nada</h1>
+  </section>
+  }
+
+  @default {
+  <p>No has seleccionado un role</p>
+  }
+
+  }
+</div>
