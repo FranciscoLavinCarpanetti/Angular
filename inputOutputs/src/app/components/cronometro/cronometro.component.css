@@ -1,0 +1,11 @@
+.cronometro {
+  border: 2px solid black;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  align-content: center;
+
+  p {
+    font-size: 2rem;
+  }
+}

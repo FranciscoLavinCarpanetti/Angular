@@ -1,0 +1,10 @@
+<div>
+  <label for="name">Nombre</label>
+  <input type="text" id="name" placeholder="introduce tu nombre" [(ngModel)]="nuevoContacto.name">
+</div>
+
+<div>
+  <label for="phone">Telefono</label>
+  <input type="text" id="phone" placeholder="introduce tu telefono" [(ngModel)]="nuevoContacto.phone">
+</div>
+<button (click)="capturarDatos()">Guardar</button>

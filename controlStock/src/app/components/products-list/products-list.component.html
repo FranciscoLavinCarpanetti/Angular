@@ -1,0 +1,9 @@
+<section>
+  <h2>Lista de productos de mi almacen</h2>
+  <hr>
+  @for(product of productos; track product.id){
+  <app-product [product]="product"></app-product>
+  }@empty{
+  <h3 class="text-secondary text-center">No hay productos en el almacen</h3>
+  }
+</section>

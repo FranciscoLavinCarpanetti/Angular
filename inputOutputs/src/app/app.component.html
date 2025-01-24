@@ -1,0 +1,23 @@
+<div>
+  <app-selector-pais (paisEnviado)="pintarPais($event)"></app-selector-pais>
+  <p>La capital de {{ pais }} es {{ capital }}</p>
+</div>
+
+<div [style.background-color]="color">
+  <app-boton-color (colorEnviado)="cambiarColor($event)"></app-boton-color>
+</div>
+
+<hr>
+
+<app-cronometro [valorInicial]="2"></app-cronometro>
+
+<app-cronometro [valorInicial]="76"></app-cronometro>
+<app-cronometro [valorInicial]="numero"></app-cronometro>
+<app-cronometro></app-cronometro>
+
+<hr>
+<app-foto [miFoto]="arrayFotos[0]"></app-foto>
+<app-foto [miFoto]="arrayFotos[1]"></app-foto>
+<app-foto [miFoto]="arrayFotos[2]"></app-foto>
+
+<hr>

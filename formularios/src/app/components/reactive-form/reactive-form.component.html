@@ -1,0 +1,84 @@
+<h2 style="color: blue">{{ formModel.valid }}</h2>
+
+<form [formGroup]="formModel" (ngSubmit)="getDataForm()">
+
+  <div>
+    <label class="form-label" for="nombre">Nombre</label>
+    <input class="form-control" type="text" id="nombre" formControlName="nombre" placeholder="introduce tu nombre">
+    @if(checkErrorField('nombre', 'required')){
+    <p class="error">El campo es obligatorio</p>
+    }
+    @if(checkErrorField('nombre', 'minlength')){
+    <p class="error">El campo tiene una longitud minima de 3 caracteres</p>
+    }
+  </div>
+
+  <div>
+    <label class="form-label" for="email">Email</label>
+    <input class="form-control" type="text" id="email" formControlName="email" placeholder="introduce tu email">
+    @if(checkErrorField('email', 'required')){
+    <p class="error">El email es obligatorio</p>
+    }
+
+    @if(checkErrorField('email', 'pattern')){
+    <p class="error">El email tiene que ser correcto</p>
+    }
+  </div>
+
+  <div>
+    <label class="form-label" for="edad">Edad</label>
+    <input class="form-control" type="number" id="edad" formControlName="edad" placeholder="introduce tu edad">
+    <!-- @if(checkErrorField('edad', 'min')){
+    <p class="error">La edad minima es 18 años</p>
+    }
+    @if(checkErrorField('edad', 'max')){
+    <p class="error">La edad maxima es 65 años</p>
+  } -->
+    @if(checkErrorField('edad', 'min') || checkErrorField('edad', 'max')){
+    <p class="error">La edad debe estar entre 18 y 65 años</p>
+    }
+  </div>
+
+  <div>
+    <label class="form-label" for="dni">DNI</label>
+    <input class="form-control" type="text" id="dni" formControlName="dni" placeholder="introduce tu dni">
+    @if(checkErrorField('dni', 'dnivalidator') ){
+    <p class="error">{{formModel.get('dni')?.errors?.['dnivalidator']}}</p>
+    }
+  </div>
+
+  <div>
+    <label class="form-label" for="profesion">Profesion</label>
+    <select class="form-select" formControlName="profesion" id="profesion">
+      <option value="">Selecciona una profesión</option>
+      <option value="desarrollador">Desarrollador</option>
+      <option value="marketing">Marketing</option>
+      <option value="contable">Contable</option>
+      <option value="uxui">UX-UI</option>
+    </select>
+  </div>
+
+  <div>
+    <label class="form-label" for="password">Password</label>
+    <input class="form-control" type="password" id="password" formControlName="password"
+      placeholder="introduce tu password">
+    @if(checkErrorField('password', 'minlength')){
+    <p class="error">La longitud minima del password es 8</p>
+    }
+  </div>
+
+  <div>
+    <label class="form-label" for="repitepassword">repitepassword</label>
+    <input class="form-control" type="password" id="repitepassword" formControlName="repitepassword"
+      placeholder="repite el password">
+  </div>
+
+  @if(formModel.hasError('passwordvalidator')){
+  <p class="error">Los password no coinciden</p>
+  }
+  <div>
+    <input type="submit" value="Enviar" class="btn btn-danger mt-3" [disabled]="formModel.invalid">
+  </div>
+
+
+</form>
