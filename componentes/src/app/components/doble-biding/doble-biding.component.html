@@ -1,0 +1,13 @@
+<div>
+  <input type="text" placeholder="introduce una frase" [(ngModel)]="frase" (input)="mostrarFrase($event)">
+  <input type="number" placeholder="introduce un numero" [(ngModel)]="numero">
+  <select [(ngModel)]="seleccion">
+    <option value="">Selecciona una profesion</option>
+    <option value="dev">Desarrollador</option>
+    <option value="seo">Marketing</option>
+    <option value="ceo">Direccion</option>
+  </select>
+  <input type="color" [(ngModel)]="color">
+  <input type="date" [(ngModel)]="fecha">
+  <button (click)="mostrarDatos()">Mostrar</button>
+</div>
