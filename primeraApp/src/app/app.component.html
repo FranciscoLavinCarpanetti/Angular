@@ -1,0 +1,48 @@
+<header></header>
+<main>
+  <!-- interpolacion -->
+  <h2>Comunicacion ts => html</h2>
+  <h1>Bienvenido {{nombre}} {{apellido}} </h1>
+  <figure>
+    <!-- property binding -->
+    <img [src]="url" [title]="'me llamo '  + nombre" [alt]="title">
+  </figure>
+  <article>
+    <h3>{{usuario.nombre}} {{usuario.apellidos}}</h3>
+    <p>Edad: {{usuario.edad}}</p>
+    <p>Email: {{usuario.email}}</p>
+  </article>
+
+  <p>{{ escribirTexto() }}</p>
+
+  <hr>
+
+  <h2>Comunicacion desde html => ts</h2>
+
+  <!-- event biding -->
+
+  <button (click)="onclick('mensaje que tienes que mostrar')">Click</button>
+  <button (click)="onclick(title)">Click</button>
+  <hr>
+  <div>
+    <select (change)="capturarJob($event)">
+      <option value="">Selecciona una opción</option>
+      <option value="desarrollador">Desarrollador</option>
+      <option value="marketing">Marketing</option>
+      <option value="design">Diseño</option>
+      <option value="dirección">Dirección</option>
+    </select>
+    <p> El puesto de trabajo elegido es: <strong>{{job}}</strong></p>
+  </div>
+
+  <hr>
+
+  <input type="color" (input)="cambiarColor($event)">
+  <input type="range" min="1" max="10" value="1" (input)="cambiarNumero($event)">
+  <!-- <div class="caja" [style]="'background-color:' + color"> -->
+  <div class="caja" [style.background-color]="color">
+    <span>{{numero}}</span>
+  </div>
+
+</main>
+<footer></footer>
