@@ -1,1 +1,11 @@
-<p>exercise-list works!</p>
+<section class="mt-2">
+    <h2>Lista de ejercicios de FitTrack reto semanal</h2>
+    <hr>
+     @for (exercise of exercises; track $index) {
+        <app-exercise [exercise]="exercise"></app-exercise>
+         }@empty {
+             <h3 class="text-secondary text-center">No hay ejercicios registrados</h3>
+             }   
+</section>
+
+

@@ -1,6 +1,6 @@
 import { ExercisesService } from './../../services/exercises.service';
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-exercise',
@@ -12,10 +12,13 @@ export class FormExerciseComponent {
   exerciseForm: FormGroup;
 
   ExercisesService = inject(ExercisesService);
+  formModel: any;
 
   constructor() {
     this.exerciseForm = new FormGroup({
-      title: new FormControl('', []),
+      title: new FormControl('', [
+
+      ]),
       quantity: new FormControl('', []),
       weight: new FormControl('', [])
     }, []);

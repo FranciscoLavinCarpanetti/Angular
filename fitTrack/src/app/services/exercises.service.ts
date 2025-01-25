@@ -21,8 +21,12 @@ export class ExercisesService {
       return { status: 200, message: 'Ejercicio actualizado correctamente' };
     }
 
-
   }
+  getAll(): IExercise[] {
+    return this.arrExercises;
+  }
+
+
 }
 
 
