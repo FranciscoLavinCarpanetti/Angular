@@ -17,10 +17,20 @@ export class FormExerciseComponent {
   constructor() {
     this.exerciseForm = new FormGroup({
       title: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(50)
 
       ]),
-      quantity: new FormControl('', []),
-      weight: new FormControl('', [])
+      quantity: new FormControl('', [
+        Validators.required,
+        Validators.min(1),
+      ]),
+      weight: new FormControl('', [
+        Validators.required,
+        Validators.min(10),
+        Validators.max(80)
+      ])
     }, []);
   }
 
@@ -31,5 +41,14 @@ export class FormExerciseComponent {
     this.exerciseForm.reset();
 
   }
+
+  checkErrorFiled(field: string, error: string): boolean {
+    if (this.formModel.get(field)?.hasError(error) && this.formModel) {
+      return true;
+
+    }
+    return false
+  }
+
 
 }
