@@ -1,1 +1,35 @@
-<p class="btn btn-primary"></p>
+<!-- inicio Header -->
+<header class="bg-secondary py-5 px-4 text-white shadow border-bottom border-5 border-danger">
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand">FitTrack</a>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </nav> 
+</header>
+<!-- fin Header -->
+<!-- inicio Main -->
+<main>
+    <section class="container">
+        <div class="row g-3">
+            <div class="col-12 col-md-4">
+                 <app-form-exercise></app-form-exercise>
+            </div>  
+            <div class="col-12 col-md-8">
+                 <app-total></app-total>
+            </div>
+            <div class="col-12">
+                 <app-exercise-list></app-exercise-list>
+            </div>   
+        </div>    
+    </section>  
+</main>
+<!-- fin Main -->
+ <!-- inicio Footer -->
+<footer class="bg-secondary py-2 px-4 text-white text-center border-top border-5 border-danger fixed-bottom">
+  copyright&copy;2025   FitTrack
+</footer>
+<!-- fin Footer -->
