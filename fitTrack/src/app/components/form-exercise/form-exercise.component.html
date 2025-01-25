@@ -1,1 +1,19 @@
-<p>form-exercise works!</p>
+<div class="mt-3">
+     <form [formGroup]="exerciseForm" (ngSubmit)="getDataExercise()">
+       <div>
+             <label class="form-label" for="title">Ejercicio</label>
+                 <input type="text" class="form-control" id="title" formControlName="title" placeholder="Ejercicio a realizar">
+         </div>
+         <div>
+             <label class="form-label" for="weight">Peso</label>
+                 <input type="number" class="form-control" id="weight" formControlName="weight" placeholder="Peso a levantar">
+         </div>
+         <div>
+             <label class="form-label" for="quantity">Cantidad</label>
+                 <input type="number" class="form-control" id="quantity" formControlName="quantity" placeholder="Cantidad de repeticiones">
+         </div>
+         <div class="mt-3">
+                 <input type="submit" class="btn btn-outline-success" value="Enviar">
+         </div>
+     </form>
+</div>
