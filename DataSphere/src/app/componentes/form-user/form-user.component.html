@@ -1,1 +1,39 @@
-<p>form-user works!</p>
+<div class="mt-3 mb-5"><!--onSubmit()-->
+     <form [formGroup]="formUser" (ngSubmit)="getDataUser()">
+          <div>
+            <label class="form-label" for="name">Nombres</label>
+              <input type="text" class="form-control" id="name" formControlName="name" placeholder="Ingrese tus nombres">
+          </div>
+          <div>
+            <label class="form-label" for="lasname">Apellidos</label>
+              <input type="text" class="form-control" id="lasname" formControlName="lasname" placeholder="Ingrese tus apellidos">
+          </div>
+          <div>
+            <label class="form-label" for="email">E-mail</label>
+              <input type="text" class="form-control" id="email" formControlName="email" placeholder="Ingrese tu e-mail">
+          </div>
+          <div>
+            <label class="form-label" for="password">Password</label>
+              <input type="password" class="form-control" id="password" formControlName="password" placeholder="Ingrese tu password">
+          </div>
+          <div>
+            <label class="form-label" for="data">Fecha nacimiento</label>
+              <input type="date" class="form-control" id="data" formControlName="data" placeholder="Ingrese tu fecha de nacimiento">
+          </div>
+          <div>
+            <label class="form-label" for="gender">Genero</label>
+              <input type="text" class="form-control" id="gender" formControlName="gender" placeholder="Ingrese tu genero">
+          </div>
+          <div>
+            <label class="form-label" for="address">Direccion</label>
+              <input type="text" class="form-control" id="address" formControlName="address" placeholder="Ingrese tu direccion">
+          </div>
+          <div>
+            <label class="form-label" for="socialnetwork">Red Social</label>
+              <input type="text" class="form-control" id="socialnetwork" formControlName="socialnetwork" placeholder="Ingrese tu red social de trabajo">
+          </div>
+          <div class="mt-3">
+            <button type="submit" type="button" class="btn btn-outline-success">Enviar</button>
+          </div>
+     </form>
+</div>
