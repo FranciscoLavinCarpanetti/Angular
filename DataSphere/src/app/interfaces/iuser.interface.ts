@@ -2,9 +2,9 @@ export interface IUser {
     id?: number
     name: string
     lastname: string
-    correo: string
-    fecha: string
-    genero: string
-    direccion: string
-    redsocial: string
+    email: string
+    data: string
+    gender: string
+    address: string
+    socialnetwork: string
 }

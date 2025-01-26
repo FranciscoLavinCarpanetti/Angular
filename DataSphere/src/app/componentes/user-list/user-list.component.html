@@ -1,1 +1,9 @@
-<p>user-list works!</p>
+<section class="mt-4">
+    <h3 class="fs-4 fw-lighter text-decoration-underline">Listado usuarios agregados recientemente.</h3>
+   @for (user of users; track $index) {
+    <app-user></app-user>
+   } @empty {
+    <p class="text-secondary text-center">No hay usuarios agregados recientemente</p>
+   }
+
+</section>

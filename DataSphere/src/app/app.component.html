@@ -1,6 +1,59 @@
-<select class="form-select" aria-label="Default select example">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select>
+<!-- inicio Header -->
+<header>
+   <nav class="navbar navbar-expand-lg bg-warning">
+       <div class="container-fluid">
+            <a class="navbar-brand bg-warning fs-1" href="#">DataSphere</a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+               </button>
+           <div class="collapse navbar-collapse" id="navbarScroll">
+             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                  <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Inicio</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Formularios</a>
+               <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Usuario</a></li>
+                  <li><a class="dropdown-item" href="#">Hobbies</a></li>
+                  <li><a class="dropdown-item" href="#">Interes cultural</a></li>
+                  <li><a class="dropdown-item" href="#">Sociedad</a></li>
+                 </ul>
+                  </li>
+                  <li class="nav-item"><a class="nav-link disabled" aria-disabled="true">Link</a></li>
+             </ul>
+                <form class="d-flex" role="search">
+                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                     <button class="btn btn-outline-secondary" type="submit">Search</button>
+               </form>
+           </div>
+      </div>
+   </nav>
+</header>
+<!-- fin Header -->
+ <!-- inicio Main -->
+<main>
+   <section class="container">
+       <div class="row g-4">
+            <div class="col-12">
+                <app-user-list></app-user-list>
+            </div>
+            <div class="col-12 col-md-6">
+              <app-form-user></app-form-user>
+            </div>
+            <div class="col-12 col-md-6">
+              <app-total-user></app-total-user>
+            </div>
+       </div>
+   </section>
+</main>
+<!-- fin Main -->
+<!-- inicio Footer -->
+<footer class="fixed-bottom">
+   <div class="card text-center bg-warning text-dark">
+     <div class="card-body">
+        <h5 class="card-title">DataSphere &copy;2025</h5>
+         <p class="card-text">Conectamos información y tecnología para transformar tu mundo. Descubre soluciones innovadoras y conocimientos en un solo lugar.</p>
+            <a href="#" class="btn btn-outline-secondary">Siguenos en nuestras redes</a>
+     </div>
+   </div>
+</footer>
+<!-- fin Footer -->
