@@ -1,0 +1,9 @@
+<section>
+  @for (product of productos; track product.id) {
+    <article>
+    <app-product-card [miProducto]="producto"></app-product-card>
+
+</article>
+}
+
+</section>
