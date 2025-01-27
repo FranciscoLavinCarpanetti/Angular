@@ -1,7 +1,7 @@
 import { ProductosService } from './../../services/productos.service';
 import { Component, inject } from '@angular/core';
 import { IProduct } from '../../interfaces/iproduct.type=interface';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-productoview',
@@ -14,6 +14,7 @@ export class ProductoviewComponent {
   productoData!: IProduct;
   ProductosService = inject(ProductosService);
   activatedRoute = inject(ActivatedRoute);
+  router = inject(Router);
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: any) => {
