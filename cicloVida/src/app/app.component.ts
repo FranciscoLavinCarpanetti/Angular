@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { EjercicioComponent } from "./components/ejercicio/ejercicio.component";
-
+import { EjerciciosComponent } from "./components/ejercicios/ejercicios.component";
 
 @Component({
   selector: 'app-root',
-  imports: [EjercicioComponent],
+  imports: [EjerciciosComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'cicloVida';
+  cargarData(event: any) {
+    console.log(event.target.value)
+  }
 }
