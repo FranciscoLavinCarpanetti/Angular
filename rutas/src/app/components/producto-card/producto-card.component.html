@@ -1,0 +1,4 @@
+<h3>{{miProducto.title}}</h3>
+<p>Tamaño : {{miProducto.size}}</p>
+<p>Descripcion: <span [innerHTML]="miProducto.description"></span></p>
+<button class="btn btn-danger" [routerLink]="['/producto', miProducto.id]">Ver más</button>

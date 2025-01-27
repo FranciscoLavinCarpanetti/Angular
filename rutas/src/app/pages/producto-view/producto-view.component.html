@@ -1,0 +1,6 @@
+<section class="card p-3">
+  <h3>{{productoData.title}}</h3>
+  <p>Talla: {{productoData.size}}</p>
+  <p [innerHTML]="productoData.description"></p>
+  <button [routerLink]="['/productos']" class="btn btn-success">Listado productos</button>
+</section>
