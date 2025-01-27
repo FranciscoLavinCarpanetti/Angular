@@ -23,7 +23,12 @@ export class EjercicioComponent {
   ngDoCheck() {
     console.log('ngDoCheck', 4);
   }
+  ngAfterContentInit() {
+    console.log('ngAfterContentInit', 6);
+  }
 
-
+  ngOnDestroy() {
+    console.log('ngOnDestroy', 5);
+  }
 
 }
