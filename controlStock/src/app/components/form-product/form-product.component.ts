@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProductsService } from '../../services/products.service';
 
 @Component({
@@ -16,9 +16,15 @@ export class FormProductComponent {
   //todo: validar que el title es requerido, que precio no puede ser 0, y la cantidad no puede ser 0.
   constructor() {
     this.productForm = new FormGroup({
-      title: new FormControl("", []),
-      price: new FormControl(0, []),
-      quantity: new FormControl(0, []),
+      title: new FormControl("", [
+        Validators.required
+      ]),
+      price: new FormControl(0, [
+        Validators.min(1)
+      ]),
+      quantity: new FormControl(0, [
+        Validators.min(1)
+      ]),
     }, [])
   }
 
@@ -29,4 +35,13 @@ export class FormProductComponent {
     this.productForm.reset();
 
   }
+
+
+  checkFildError(nameField: string, errorField: string) {
+    if (this.productForm.get(nameField)?.hasError(errorField) && this.productForm.get(nameField)?.touched) {
+      return true;
+    }
+    return false;
+  }
+
 }
