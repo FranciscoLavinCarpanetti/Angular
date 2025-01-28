@@ -1,25 +1,39 @@
-import { ProductsService } from './../../services/products.service';
-import { Component, Inject } from '@angular/core';
-import { Iproduct, IResponse } from '../../interface/iproducts.type=interface';
-import { __await } from 'tslib';
+import { Component, inject } from '@angular/core';
+import { IProduct } from '../../interfaces/iproduct.interface';
+import { ProductsService } from '../../services/products.service';
+import { IResponse } from '../../interfaces/iresponse.interface';
+import { ProductCardComponent } from "../../components/product-card/product-card.component";
 
 @Component({
   selector: 'app-productos',
-  imports: [],
+  imports: [ProductCardComponent],
   templateUrl: './productos.component.html',
   styleUrl: './productos.component.css'
 })
 export class ProductosComponent {
-  arrProductos: Iproduct[] = [];
-  ProductsService = Inject(ProductsService);
-
+  arrProducts: IProduct[] = [];
+  productsService = inject(ProductsService);
 
   async ngOnInit() {
+    //opcion 1: async await
     try {
-      let response: IResponse = await this.ProductsService.getAll();
-      this.arrProductos = response.results;
+      let response: IResponse = await this.productsService.getAll()
+      this.arrProducts = response.results;
+      console.log(this.arrProducts);
     } catch (err) {
       console.log(err);
     }
+
+    //opcion 2: then catch
+    /* this.productsService.getAll()
+      .then((response) => {
+        let data: IResponse = response;
+        this.arrProducts = data.results;
+      })
+      .catch((err) => {
+        console.log(err)
+      }) */
   }
+
+
 }

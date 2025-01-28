@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IUser } from '../interfaces/iuser.interface';
-import { JOBS, USERS } from '../db/users.db';
+import { USERS } from '../db/users.db';
 
 @Injectable({
   providedIn: 'root'
@@ -28,11 +28,28 @@ export class UsersService {
   }
 
   getByJob(job: string): IUser[] {
-    return this.usersList.filter(users => users.job === job)
+    //opcion 1: con un if
+    /* if (job !== "") {
+      return this.usersList.filter(users => users.job === job)
+    } else {
+      return this.usersList
+    } */
+
+    //opcion 2: con un ternario
+    //return (job !== "") ? this.usersList.filter(users => users.job === job) : this.usersList;
+
+    //opcion 3: con includes
+    return this.usersList.filter(users => users.job.includes(job))
+
   }
 
   getJobList(): string[] {
     return this.jobList;
+  }
+
+  // los datos estan en la BBDD el front no puede hacer nada que no le permita el back
+  getByNameJob(name: string, job: string) {
+    return this.usersList.filter(user => user.name.includes(name) && user.job.includes(job))
   }
 
 }

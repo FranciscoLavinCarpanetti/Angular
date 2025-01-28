@@ -1,1 +1,18 @@
-<p>user-view works!</p>
+<section class="container my-3">
+  <div class="card">
+    <div class="row">
+      <figure class="col-12 col-md-4 p-4">
+        <img class="img rounded-circle" [src]="usuario.photo" [alt]="usuario.name">
+      </figure>
+      <div class="col-12 col-md-8 p-4">
+        <h1>{{usuario.name}} {{usuario.surname}}</h1>
+        <p>Email: {{usuario.email}}</p>
+        <p>Empleo: {{usuario.job}}</p>
+        <p>Telefono: {{usuario.phone}}</p>
+        <button class="btn btn-outline-warning shadow" [routerLink]="['/usuarios']">Volver usuarios</button>
+      </div>
+
+    </div>
+  </div>
+
+</section>

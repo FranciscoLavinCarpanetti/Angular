@@ -1,1 +1,14 @@
-<p>user-card works!</p>
+<div class="card p-3 shadow-sm">
+  <div class="d-flex gap-5">
+    <figure>
+      <img [src]="miUsuario.photo" [alt]="miUsuario.name" class="img-fluid rounded-circle shadow"  width="100">
+    </figure>
+    <div>
+      <h3>{{miUsuario.name}} {{miUsuario.surname}}</h3>
+      <p>
+        <small>{{miUsuario.job}}</small>
+      </p>
+      <button class="btn btn-sm btn btn-outline-warning shadow" [routerLink]="['/usuario', miUsuario.id]">Ver detalle</button>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,19 @@
-<p>users-list works!</p>
-<app-name-search></app-name-search>
-<app-select-jobs (seleccionEmituda)="selectByJob($event)"></app-select-jobs>
-
-
-
-
+<section class="container my-3">
+  <h1>Lista de usuarios</h1>
+  <hr>
+  <div>
+    <app-name-search (busquedaEmitida)="searchByName($event)"></app-name-search>
+  </div>
+  <div>
+    <app-select-job (seleccionEmitida)="selectByJob($event)"></app-select-job>
+  </div>
+  <div class="row g-3">
+    @for( usuario of arrUsuarios; track usuario.id ){
+    <article class="col-12 col-md-6 col-xl-4">
+      <app-user-card [miUsuario]="usuario"></app-user-card>
+    </article>
+    }@empty {
+    <h3>No hay usuarios</h3>
+    }
+  </div>
+</section>

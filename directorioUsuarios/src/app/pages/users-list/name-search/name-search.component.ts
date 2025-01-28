@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { asapScheduler } from 'rxjs';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-name-search',
@@ -9,25 +9,26 @@ import { asapScheduler } from 'rxjs';
   styleUrl: './name-search.component.css'
 })
 export class NameSearchComponent {
-
+  @Output() busquedaEmitida: EventEmitter<string> = new EventEmitter()
   nameForm: FormGroup;
 
-  @Input() busquedaEmitida: EventEmitter<string> = new EventEmitter<string>();
-
-
   constructor() {
-    this.nameForm = new FormControl({
-      name: new FormControl('', [])
-    }, []);
+    this.nameForm = new FormGroup({
+      name: new FormControl("", [])
+    }, [])
   }
 
-
+  // este es el evento del formulario
   getName() {
-    console.log(this.nameForm.value);
-    this.busquedaEmitida.emit(this.nameForm.value.name);
+    //en este evento tenemos los datos que necesitamos que es nombre a buscar, enviar al padre el name que tiene que buscar para eso necesitamos un output
+    this.busquedaEmitida.emit(this.nameForm.value.name)
+    this.nameForm.reset()
   }
 
-
+  //este es el evento del input
+  getInputName(event: any) {
+    this.busquedaEmitida.emit(event.target.value)
+  }
 
 
 }

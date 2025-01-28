@@ -29,11 +29,11 @@
       - Crear las rutas dentro del fichero routes que carguen los componentes pagina. ✅
 
 
-  - TAREA 1: Cargar el menu dentro del componente header y que funcionen las rutas cargando los componentes especificos de cada router.
-  - TAREA 2: Cargar dentro del UserList todos los datos de mi lista de usuarios que estan en el servicio. Cargarlo en un grid de bootstrap que tenga 1 columna en movil, 2 en tablet y 3 en desktop (sm, md, xl)
-  - TAREA 3: Poner un boton de ver detalle en cada usuario, esto nos enviará a la ruta de de vista de usuario.
-            - Recuperaremos el id del usuario de la ruta o bien por ActivatedRouted o bien por @Input(), recordar que si usas este metodo tienes que modificar el app.config() => withComponentInputBinding()
-            - Cargaremos la información del usuario haciendo un peticion al servicio por ID.
-  - TAREA 4: EN el componente userList crear un formulario que capture el nombre con un boton de buscar este recogerá el dato del formulario y buscará por nombre en el servicio.
-  - TAREA 5: Un selector con uan lista de trabajos, desarrollador, contabilidad, marketing, direccion.
+  - TAREA 1: Cargar el menu dentro del componente header y que funcionen las rutas cargando los componentes especificos de cada router. ✅
+  - TAREA 2: Cargar dentro del UserList todos los datos de mi lista de usuarios que estan en el servicio. Cargarlo en un grid de bootstrap que tenga 1 columna en movil, 2 en tablet y 3 en desktop (sm, md, xl) ✅
+  - TAREA 3: Poner un boton de ver detalle en cada usuario, esto nos enviará a la ruta de de vista de usuario. ✅
+            - Recuperaremos el id del usuario de la ruta o bien por ActivatedRouted o bien por @Input(), recordar que si usas este metodo tienes que modificar el app.config() => withComponentInputBinding() ✅
+            - Cargaremos la información del usuario haciendo un peticion al servicio por ID. ✅
+  - TAREA 4: En el componente userList crear un formulario que capture el nombre con un boton de buscar este recogerá el dato del formulario y buscará por nombre en el servicio. ✅
+  - TAREA 5: Un selector con una lista de trabajos esta lista de trabajos la proporciona la BBDD.
   Tanto el componente de la tarea 4 y de la tarea 5 serán componente autonomos y solo recogeran datos de usuario comunicando al padre el resultado recogido a través de un output

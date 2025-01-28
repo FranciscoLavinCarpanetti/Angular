@@ -1,12 +1,9 @@
-<p>productos works!</p>
-<div>
-    <div class="row">
-      @for (product of arrProductos; track product._id) {
-        <article class="col-12 col-md-6 col-lg-4">
-
-          <h3>{{product.name}}</h3>
-
-        </article>
-      }
-    </div>
-</div>
+<section class="container">
+  <div class="row">
+    @for(product of arrProducts; track product._id){
+    <article class="col-12 col-md-6 col-lg-4">
+      <app-product-card [myProduct]="product"></app-product-card>
+    </article>
+    }
+  </div>
+</section>

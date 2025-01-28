@@ -1,5 +1,18 @@
-<header>
-  <button routerLink="[]">Home</button>
-  <button routerLink="/Productos">Productos</button>
+<header class="p-3 bg-success-subtle">
+  <button class="btn btn-success m-2" [routerLink]="['/']">Home</button>
+  <button class="btn btn-success m-2" [routerLink]="['/productos']">Productos</button>
 </header>
-<router-outlet />
+<hr>
+<main>
+  <router-outlet />
+</main>
+<footer class="p-3">
+  <div class="card bg-success-subtle ">
+    <div class="card-body stiky-bottom">
+      <h5 class="card-title">Tu tienda de confianza</h5>
+      <p class="card-text">Solo la mejor ropa de temporada para tus mejores ocaciones.</p>
+      <a  class="btn btn-success">volver</a>
+    </div>
+  </div>
+</footer>
+

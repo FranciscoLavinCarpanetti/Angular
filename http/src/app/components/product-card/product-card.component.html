@@ -1,0 +1,6 @@
+<div class="card p-3" [routerLink]="['/product', myProduct._id]">
+  <figure>
+    <img class="img-fluid" [src]="myProduct.image" [alt]="myProduct.name">
+  </figure>
+  <h3>{{myProduct.name}}</h3>
+</div>
