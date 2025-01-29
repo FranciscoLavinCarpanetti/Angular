@@ -1,8 +1,9 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { IProduct } from '../../interfaces/iproduct.interface';
 import { ProductsService } from '../../services/products.service';
 import { IResponse } from '../../interfaces/iresponse.interface';
 import { ProductCardComponent } from "../../components/product-card/product-card.component";
+import { SelectCategoryComponent } from '../../components/select-category/select-category.component';
 
 @Component({
   selector: 'app-productos',
@@ -13,6 +14,7 @@ import { ProductCardComponent } from "../../components/product-card/product-card
 export class ProductosComponent {
   arrProducts: IProduct[] = [];
   productsService = inject(ProductsService);
+  @Input() category: string = '';
 
   async ngOnInit() {
     //opcion 1: async await
@@ -35,5 +37,13 @@ export class ProductosComponent {
       }) */
   }
 
-
+  async ngOnChanges() {
+    if (this.category) {
+      try {
+        this.productsService.getByCategory(this.category)
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  }
 }

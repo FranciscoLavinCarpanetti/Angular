@@ -22,4 +22,13 @@ export class ProductsService {
     return firstValueFrom(this.httpClient.get<IProduct>(`${this.baseUrl}${_id}`))
   }
 
+  getByCategoryList(): Promise<string[]> {
+    return firstValueFrom(this.httpClient.get<string[]>(`${this.baseUrl}categories`))
+  }
+  async getByCategory(category: string): Promise<IProduct[]> {
+    let response: IResponse = await this.getAll();
+    const productos = response.results;
+    return productos.filter(producto => producto.category.includes(category))
+  }
+
 }
