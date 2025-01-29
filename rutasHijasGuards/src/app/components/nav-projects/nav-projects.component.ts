@@ -1,7 +1,6 @@
-import { ProjectsService } from './../../services/projects.service';
-
-import { Component, inject, } from '@angular/core';
-import { IProjets } from '../../interfaces/iprojets.interface';
+import { Component, inject } from '@angular/core';
+import { IProject } from '../../interfaces/iproject.interface';
+import { ProjectsService } from '../../services/projects.service';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -11,17 +10,15 @@ import { RouterLink } from '@angular/router';
   styleUrl: './nav-projects.component.css'
 })
 export class NavProjectsComponent {
-  arrProject: IProjets[] = [];
-  ProjectsService = inject(ProjectsService);
-
+  arrProjects: IProject[] = [];
+  projectsService = inject(ProjectsService);
 
   async ngOnInit() {
     try {
-      this.arrProjets = await this.ProjectsService.getAll();
-      console.log(this.arrProjets);
+      this.arrProjects = await this.projectsService.getAll()
+      console.log(this.arrProjects)
     } catch (err) {
-      console.log(err);
+      console.log(err)
     }
   }
-
 }

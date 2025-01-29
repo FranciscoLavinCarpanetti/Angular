@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavProjectsComponent } from '../../components/nav-projects/nav-projects.component';
+import { NavProjectsComponent } from "../../components/nav-projects/nav-projects.component";
 import { RouterOutlet } from '@angular/router';
 
 @Component({

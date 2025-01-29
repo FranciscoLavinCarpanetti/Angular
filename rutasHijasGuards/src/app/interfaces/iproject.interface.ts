@@ -1,6 +1,6 @@
 import { IData } from "./idata.interface";
 
-export interface IProjets {
+export interface IProject {
   id: number;
   name: string;
   data: IData

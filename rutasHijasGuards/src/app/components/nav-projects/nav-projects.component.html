@@ -1,6 +1,10 @@
 <div class="p-3">
-<h4>Menu de proyectos</h4>
-@for (project of arrProjects; track project.id) {
-<button class="btn btn-outline-info w-100 mb-2" [routerLink]="['/projects', project.name]">{{project.name.toUpperCase()}}</button>
-}
+  <h4>Menu proyectos</h4>
+  @for(project of arrProjects; track project.id){
+
+  <button class="btn btn-outline-info w-100 mb-2"
+    [routerLink]="['/projects', project.name]">{{project.name.toUpperCase()}}</button>
+
+  }
+
 </div>
