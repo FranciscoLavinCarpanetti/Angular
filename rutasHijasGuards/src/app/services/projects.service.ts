@@ -15,4 +15,9 @@ export class ProjectsService {
   getById(id: number): IProject | undefined {
     return this.projects.find(project => project.id === id);
   }
+
+  getByName(name: string): IProject | undefined {
+    // return firstValueFrom(this.httpClient.get<IProject>(url + name))
+    return this.projects.find(project => project.name === name)
+  }
 }

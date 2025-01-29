@@ -1,4 +1,12 @@
 <div class="container">
   <a class="btn btn-info mx-2" [routerLink]="['/home']">HOME</a>
   <a class="btn btn-info mx-2" [routerLink]="['/projects']">PROYECTOS</a>
+  <a class="btn btn-info mx-2" [routerLink]="['/login']">LOGIN</a>
+  <!-- esto es una parte privada -->
+  @if(logado){
+  <a class="btn btn-info mx-2" [routerLink]="['/panel']">LISTADO PROYECTOS</a>
+  <a class="btn btn-info mx-2" [routerLink]="['/new']">NUEVO PROYECTO</a>
+  <button class="btn btn-info mx-2" (click)="logout()">Logout</button>
+
+  }
 </div>

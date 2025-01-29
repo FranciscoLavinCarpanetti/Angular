@@ -4,6 +4,10 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { WebComponent } from './pages/projects/web/web.component';
 import { DesignComponent } from './pages/projects/design/design.component';
 import { MarketingComponent } from './pages/projects/marketing/marketing.component';
+import { LoginComponent } from './pages/login/login.component';
+import { PanelComponent } from './pages/panel/panel.component';
+import { NewProjectComponent } from './pages/new-project/new-project.component';
+import { loginGuard } from './guards/login.guard';
 
 export const routes: Routes = [
   { path: "", pathMatch: 'full', redirectTo: 'home' },
@@ -16,5 +20,8 @@ export const routes: Routes = [
       { path: 'marketing', component: MarketingComponent },
     ]
   },
+  { path: 'login', component: LoginComponent },
+  { path: 'panel', canActivate: [loginGuard], component: PanelComponent },
+  { path: 'new', canActivate: [loginGuard], component: NewProjectComponent },
   { path: '**', redirectTo: 'home' }
 ];
