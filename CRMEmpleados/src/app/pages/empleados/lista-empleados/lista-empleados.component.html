@@ -1,0 +1,14 @@
+<div class="row">
+  <h1>Lista de empleados</h1>
+  <hr>
+  @for (empleado of arrEmpleados; track empleado._id) {
+  <div class="col-12 col-md-6 col-lg-4 ">
+    <div class="empleado card p-3 mt-3 shadow border-3 bg-warning text-dark bg-opacity-75">
+      <h3>{{empleado.nombre}} {{empleado.apellidos}}</h3>
+      <p>E-mail: {{empleado.email}}</p>
+      <p>Telefono: {{empleado.telefono}}</p>
+      <p>Departamento: <strong>{{empleado.departamento}}</strong></p>
+    </div>
+  </div>
+}
+</div>

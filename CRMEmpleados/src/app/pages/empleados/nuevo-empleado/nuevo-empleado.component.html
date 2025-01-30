@@ -1,0 +1,35 @@
+<div class="row">
+  <h1>Completa el formulario.</h1>
+  <hr>
+  <div class="col-12 col-lg-6 offset-0 offset-lg-3 bg-warning">
+    <form [formGroup]="empleadoForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="" class="form-label">Nombre</label>
+      <input type="text" name="" id="" class="form-control" formControlName="nombre" placeholder="Introduce tus nombres" >
+    </div>
+    <div class="mb-3"><label for="" class="form-label">Apellidos</label>
+      <input type="text" name="" id="" class="form-control" formControlName="apellido" placeholder="Introduce tus apellidos">
+    </div>
+    <div class="mb-3"><label for="" class="form-label">Email</label>
+      <input type="text" name="" id="" class="form-control" formControlName="email" placeholder="Introduce tu email">
+    </div>
+    <div class="mb-3"><label for="" class="form-label">Telefono</label>
+      <input type="text" name="" id="" class="form-control" formControlName="telefono" placeholder="Introduce tu telefono">
+    </div>
+    <div class="mb-3"><label for="" class="form-label">Departamento</label>
+      <input type="text" name="" id="" class="form-control" formControlName="departamento" placeholder="Introduce tu departamento">
+    </div>
+    <div class="mb-3"><label for="" class="form-label">Salario</label>
+      <input type="number" name="" id="" class="form-control" formControlName="salario" placeholder="Introduce tu salario">
+    </div>
+    <input type="submit" value="Enviar" class="btn btn-info">
+  </form>
+          <div class="errores">
+            <ul>
+        @for (err of arrErrores; track $index) {
+                 <li>{{err.field}} - {{err.message}}</li>
+              }
+            </ul>
+          </div>
+  </div>
+</div>
