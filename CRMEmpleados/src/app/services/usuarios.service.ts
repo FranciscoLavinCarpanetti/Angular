@@ -28,5 +28,13 @@ export class UsuariosService {
   }
 
 
+  isLogged() {
+    if (localStorage.getItem('crm_token')) {
+      return true;
+    }
+    return false;
+
+  }
+
 
 }

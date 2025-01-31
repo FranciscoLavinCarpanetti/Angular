@@ -1,0 +1,11 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <ul class="navbar-nav">
+    @if (UsuariosService.isLogged()) {
+    <li [routerLink]="['/empleados']" class="btn btn-dark">Lista empelados</li>
+    <li [routerLink]="['/empleados', 'nuevo']">Nuevo empelado</li>
+    }@else {
+    <li [routerLink]="['/registro']">Registro</li>
+    <li [routerLink]="['/login']">Login</li>
+  }
+  </ul>
+</nav>

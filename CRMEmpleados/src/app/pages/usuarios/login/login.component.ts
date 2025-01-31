@@ -1,6 +1,7 @@
 import { UsuariosService } from './../../../services/usuarios.service';
-import { Component, inject } from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 export class LoginComponent {
   loginForm: FormGroup;
   UsuariosService = inject(UsuariosService)
+  router = inject(Router)
 
   constructor() {
     this.loginForm = new FormGroup({
@@ -23,6 +25,8 @@ export class LoginComponent {
     try {
       const response = await this.UsuariosService.logion(this.loginForm.value);
       localStorage.setItem('crm_token', response.token);
+      this.router.navigateByUrl('/empleados');
+
     } catch (error) {
       console.log('Error');
 
