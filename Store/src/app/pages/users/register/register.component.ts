@@ -8,7 +8,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
-  registerForm = new FormGroup;
+  registerForm: FormGroup;
 
   constructor() {
     this.registerForm = new FormGroup({
