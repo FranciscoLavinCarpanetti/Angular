@@ -1,0 +1,30 @@
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.product{
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #000;
+  margin: 10px;
+
+}
+
+
+@media (width>=768px){
+
+  .product{
+    width: calc(50% - 20px);
+  }
+
+}
+@media (width>=992px){
+
+  .product{
+    width: calc(25% - 20px);
+  }
+
+}

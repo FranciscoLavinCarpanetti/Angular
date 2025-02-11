@@ -1,0 +1,37 @@
+
+<section >
+  <h2>Lista Productos</h2>
+  <div class="filters">
+    <div>
+      <label for="selectDptm" class="form-label" (change)="onDptoChange($event)">Departamentos</label>
+      <select name="" id="selectDptm" class="form-select">
+      <option value="">Todos</option>
+      @for (dpto of arrDptos; track $index) {
+        <option [value]="dpto">{{dpto | uppercase}}</option>
+      }
+    </select>
+    </div>
+  </div>
+  <div class="products bg-success-subtle rounded-5 shadow mt-3">
+    @for (prod of products; track prod._id) {
+      <div class="product">
+        <h4>{{prod.name}}</h4>
+        <p>{{prod.description}}</p>
+        <p>Dpto: {{prod.department}}</p>
+        <p>Precio: {{prod.price}}</p>
+        <p>Stock: {{prod.stock}}</p>
+      </div>
+    }
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
