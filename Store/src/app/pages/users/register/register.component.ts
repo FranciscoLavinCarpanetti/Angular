@@ -1,6 +1,6 @@
 import { UsersService } from './../../../../services/users.service';
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
@@ -17,9 +17,11 @@ export class RegisterComponent {
 
   constructor() {
     this.registerForm = new FormGroup({
-      username: new FormControl(''),
-      email: new FormControl(''),
-      password: new FormControl('')
+      username: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required,
+      Validators.pattern(/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/)]),
+      password: new FormControl('', [Validators.required, Validators.minLength(8),
+      Validators.pattern(/^(?=.*[@$!%*?&]).{10,}$/)])
     });
   }
 
