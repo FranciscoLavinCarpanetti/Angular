@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProductsService } from '../../../../services/products.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
@@ -20,11 +20,11 @@ export class NewProductComponent {
 
   constructor() {
     this.newProductForm = new FormGroup({
-      name: new FormControl(''),
-      description: new FormControl(''),
-      price: new FormControl(''),
-      department: new FormControl(''),
-      stock: new FormControl(''),
+      name: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      description: new FormControl('', [Validators.required, Validators.minLength(20)]),
+      price: new FormControl('', [Validators.required, Validators.min(1)]),
+      department: new FormControl('', [Validators.required]),
+      stock: new FormControl('', [Validators.required, Validators.min(1)]),
     });
   }
 
