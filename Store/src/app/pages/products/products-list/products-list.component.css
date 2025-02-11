@@ -1,30 +1,161 @@
-.products{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+/* =============================
+   ESTILOS GENERALES DE LA LISTA DE PRODUCTOS
+   ============================= */
 
-}
-
-.product{
-  width: 100%;
+/* Contenedor de los productos */
+.products {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los productos se ajusten en diferentes tamaños de pantalla */
+  justify-content: center; /* Centra los productos horizontalmente */
+  gap: 15px; /* Espacio entre productos */
   padding: 20px;
-  border: 1px solid #000;
-  margin: 10px;
-
 }
 
-
-@media (width>=768px){
-
-  .product{
-    width: calc(50% - 20px);
-  }
-
+/* Estilo de cada tarjeta de producto */
+.product {
+  width: 100%; /* Por defecto ocupa el 100% en móviles */
+  padding: 20px;
+  background: linear-gradient(135deg, #e3f9e5, #c5e1a5); /* Degradado en tonos verdes */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación en hover */
+  text-align: center;
+  border: none;
 }
-@media (width>=992px){
 
-  .product{
-    width: calc(25% - 20px);
+/* Título dentro de cada tarjeta */
+.product h4 {
+  color: #2d6a4f;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+/* Párrafos dentro de la tarjeta */
+.product p {
+  margin: 5px 0;
+  color: #4f772d;
+  font-weight: 500;
+}
+
+/* Efecto al pasar el cursor sobre las tarjetas */
+.product:hover {
+  transform: translateY(-5px); /* Eleva la tarjeta ligeramente */
+  box-shadow: 4px 8px 15px rgba(0, 0, 0, 0.15); /* Aumenta la sombra para dar efecto flotante */
+}
+
+/* Media queries para hacer la lista responsive */
+@media (min-width: 768px) {
+  .product {
+    width: calc(50% - 20px); /* En pantallas medianas (tablets), dos productos por fila */
   }
+}
 
+@media (min-width: 992px) {
+  .product {
+    width: calc(25% - 20px); /* En pantallas grandes, cuatro productos por fila */
+  }
+}
+
+/* =============================
+   ESTILOS DEL SELECT Y FILTROS
+   ============================= */
+
+/* Contenedor de los filtros */
+.filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Estilización del select */
+.form-select {
+  appearance: none; /* Oculta el diseño por defecto del navegador */
+  width: 250px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 2px solid #4caf50;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #e3f9e5, #c5e1a5); /* Degradado verde */
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+  color: #2d6a4f;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  position: relative;
+}
+
+/* Efecto cuando el usuario pasa el cursor sobre el select */
+.form-select:hover {
+  background: linear-gradient(135deg, #d4edda, #a8df8e); /* Cambia a un degradado más claro */
+  border-color: #388e3c; /* Cambia el borde para más contraste */
+}
+
+/* Efecto cuando el select está enfocado */
+.form-select:focus {
+  outline: none;
+  border-color: #2d6a4f;
+  box-shadow: 0px 0px 10px rgba(46, 125, 50, 0.5); /* Agrega un brillo alrededor */
+}
+
+/* Personalizar la flecha del select */
+.form-select::after {
+  content: "▼"; /* Flecha personalizada */
+  font-size: 1.2rem;
+  color: #2d6a4f;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* =============================
+   ESTILOS PARA TÍTULOS Y LABELS
+   ============================= */
+
+/* Estilo del título "Lista Productos" */
+h2 {
+  text-align: left; /* Alineado a la izquierda */
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2d6a4f;
+  background: linear-gradient(to right, #e3f9e5, transparent); /* Degradado sutil de fondo */
+  padding: 10px 0;
+  width: 100%;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* Estilo del label "Departamentos" */
+.form-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d6a4f;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+/* Línea animada debajo del label cuando se pasa el cursor */
+.form-label::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #4caf50;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0); /* La línea empieza oculta */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto al pasar el cursor sobre el label */
+.form-label:hover::after {
+  transform: scaleX(1); /* Expande la línea al 100% */
 }

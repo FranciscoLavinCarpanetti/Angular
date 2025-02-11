@@ -3,8 +3,8 @@
   <h2>Lista Productos</h2>
   <div class="filters">
     <div>
-      <label for="selectDptm" class="form-label" (change)="onDptoChange($event)">Departamentos</label>
-      <select name="" id="selectDptm" class="form-select">
+      <label for="selectDptm" class="form-label" >Departamentos</label>
+      <select name="" id="selectDptm" class="form-select" (change)="onDptoChange($event)">
       <option value="">Todos</option>
       @for (dpto of arrDptos; track $index) {
         <option [value]="dpto">{{dpto | uppercase}}</option>
