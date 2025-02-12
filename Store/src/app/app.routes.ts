@@ -5,6 +5,7 @@ import { LoginComponent } from './pages/users/login/login.component';
 import { NewProductComponent } from './pages/products/new-product/new-product.component';
 import { authGuard } from './guards/auth.guard';
 import { adminGuard } from './guards/admin.guard';
+import { EditComponent } from './component/editProduct/edit.component';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/register' },
@@ -19,6 +20,9 @@ export const routes: Routes = [
   },
   {
     path: 'products/new', component: NewProductComponent, canActivate: [authGuard, adminGuard]
+  },
+  {
+    path: 'products/edit/:productId', component: EditComponent, canActivate: [authGuard, adminGuard]
   },
   { path: '**', redirectTo: '/register' }
 
