@@ -1,0 +1,15 @@
+
+<div class="sidebar">
+    <ul>
+      @if (userService.isLogged()) {
+        <li [routerLink]="['/products']">Lista productos</li>
+         @if (userService.isAdmin()) {
+        <li [routerLink]="['/products', 'new']">Nuevo Producto</li>
+         }
+        <li>Logout</li>
+      } @else {
+        <li [routerLink]="['/register']">Registro</li>
+        <li [routerLink]="['/login']">Login</li>
+      }
+    </ul>
+</div>

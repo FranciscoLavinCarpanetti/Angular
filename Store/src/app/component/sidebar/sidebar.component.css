@@ -1,0 +1,72 @@
+/* =============================
+   ESTILO DEL SIDEBAR
+   ============================= */
+
+.sidebar {
+  position: fixed;
+  left: -220px; /* Oculto por defecto */
+  top: 0;
+  width: 220px;
+  height: 100vh;
+  background: linear-gradient(135deg, #e3f9e5, #c5e1a5); /* Degradado verde claro */
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  transition: left 0.3s ease-in-out; /* Animación de desplazamiento */
+  display: flex;
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  z-index: 1000;
+}
+
+/* Mostrar el sidebar al pasar el cursor */
+.sidebar:hover {
+  left: 0;
+}
+
+/* Lista de opciones centrada */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: center; /* Centrar el texto de los ítems */
+}
+
+/* Estilo de cada opción del menú */
+.sidebar ul li {
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #2d6a4f;
+  cursor: pointer;
+  transition: background 0.3s, padding-left 0.3s;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto al pasar el cursor */
+.sidebar ul li:hover {
+  background: rgba(46, 125, 50, 0.2);
+  padding-left: 10px; /* Desplazamiento sutil */
+}
+
+/* =============================
+   FLECHA VISIBLE PARA INDICAR QUE SE PUEDE ABRIR
+   ============================= */
+.sidebar::before {
+  content: "▶"; /* Flecha apuntando hacia la derecha */
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background: #4caf50;
+  padding: 10px 12px;
+  border-radius: 0 10px 10px 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Cambiar la dirección de la flecha al abrir el sidebar */
+.sidebar:hover::before {
+  transform: translateY(-50%) rotate(90deg);
+}
