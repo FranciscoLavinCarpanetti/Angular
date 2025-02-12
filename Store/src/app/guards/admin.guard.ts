@@ -4,7 +4,7 @@ import { jwtDecode, JwtPayload } from 'jwt-decode';
 import Swal from 'sweetalert2';
 import { inject } from '@angular/core';
 
-interface CustomPayload extends JwtPayload {
+export interface CustomPayload extends JwtPayload {
   userId: string;
   userRole: string;
 
