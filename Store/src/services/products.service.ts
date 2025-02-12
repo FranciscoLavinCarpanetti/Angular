@@ -43,6 +43,13 @@ export class ProductsService {
     );
   }
 
+  updateById(productId: string, body: Iproduct) {
+    return lastValueFrom(
+      this.HttpClient.put<Iproduct>(`${this.baseUrl}/${productId}`, body)
+    );
+
+  }
+
   async getDepartments() {
     const products = await this.getAll();
     return [...new Set(products.map(p => p.department))];
