@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { ProductsService } from '../../../../services/products.service';
 import { Iproduct } from '../../../interfaces/products.interface';
 import { UpperCasePipe } from '@angular/common';
+import { UsersService } from '../../../../services/users.service';
 
 @Component({
   selector: 'app-products-list',
@@ -13,7 +14,8 @@ import { UpperCasePipe } from '@angular/common';
 export class ProductsListComponent {
   products: Iproduct[] = [];
   arrDptos: string[] = [];
-  productsService = inject(ProductsService)
+  productsService = inject(ProductsService);
+  userService = inject(UsersService);
 
 
   async ngOnInit() {

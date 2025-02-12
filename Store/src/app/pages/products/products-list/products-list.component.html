@@ -20,6 +20,9 @@
         <p>Dpto: {{prod.department}}</p>
         <p>Precio: {{prod.price}}</p>
         <p>Stock: {{prod.stock}}</p>
+        @if (userService.isLogged()) {
+          <button class="btn btn-success">Comprar</button>
+        }@else {}
       </div>
     }
   </div>
