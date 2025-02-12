@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { UsersService } from '../../../services/users.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,7 +12,12 @@ import { UsersService } from '../../../services/users.service';
 export class SidebarComponent {
 
   userService = inject(UsersService);
+  router = inject(Router)
 
 
+  onClickLogout() {
+    localStorage.removeItem(environment.tokenName);
+    this.router.navigateByUrl('/login');
+  }
 
 }

@@ -6,7 +6,7 @@
          @if (userService.isAdmin()) {
         <li [routerLink]="['/products', 'new']">Nuevo Producto</li>
          }
-        <li>Logout</li>
+        <li (click)="onClickLogout()">Logout</li>
       } @else {
         <li [routerLink]="['/register']">Registro</li>
         <li [routerLink]="['/login']">Login</li>
