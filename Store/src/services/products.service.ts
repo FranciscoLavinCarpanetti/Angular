@@ -50,6 +50,12 @@ export class ProductsService {
 
   }
 
+  deleteById(productId: string) {
+    return lastValueFrom(
+      this.HttpClient.delete<Iproduct>(`${this.baseUrl}/${productId}`)
+    );
+  }
+
   async getDepartments() {
     const products = await this.getAll();
     return [...new Set(products.map(p => p.department))];
