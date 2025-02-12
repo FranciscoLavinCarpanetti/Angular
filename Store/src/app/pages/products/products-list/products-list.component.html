@@ -22,7 +22,10 @@
         <p>Stock: {{prod.stock}}</p>
         @if (userService.isLogged()) {
           <button class="btn btn-success">Comprar</button>
-        }@else {}
+        }
+        @if (userService.isLogged() && userService.isAdmin()) {
+          <button (click)="onClickDelete(prod._id)" class="btn btn-danger m-2">Eliminar</button>
+        }
       </div>
     }
   </div>
